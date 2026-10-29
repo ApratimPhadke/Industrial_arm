@@ -1,0 +1,46 @@
+{
+  "esp32": {
+    "port": null,
+    "baud": 115200
+  },
+  "usbcan": {
+    "port": null,
+    "period_s": 0.02
+  },
+  "start_speed_limit": 2.0,
+  "joints": [
+    {
+      "name": "shoulder",
+      "bus": "usbcan",
+      "model": "RS04",
+      "can_id": 127,
+      "motor": {
+        "ctrl": "speed",
+        "current_limit_a": 6.0,
+        "torque_limit_nm": 40.0,
+        "accel_rads2": 3.0,
+        "can_timeout_ms": 500,
+        "max_temp_c": 60.0,
+        "max_torque_nm": 50.0
+      }
+    },
+    {
+      "name": "elbow",
+      "bus": "esp32",
+      "model": "RS02",
+      "can_id": 1
+    },
+    {
+      "name": "wrist1",
+      "bus": "esp32",
+      "model": "RS02",
+      "can_id": 2
+    },
+    {
+      "name": "wrist2",
+      "bus": "esp32",
+      "model": "RS02",
+      "can_id": 3
+    }
+  ]
+}
